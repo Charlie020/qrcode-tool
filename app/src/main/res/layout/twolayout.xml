@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/Ret"
+        android:layout_width="88dp"
+        android:layout_height="46dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <Button
+        android:id="@+id/generateQR"
+        android:layout_width="109dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="280dp"
+        android:text="生成二维码"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/generateTXM"
+        android:layout_width="109dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="378dp"
+        android:text="生成一维码"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="196dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="104dp"
+        android:gravity="center"
+        android:hint="请输入文本"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
