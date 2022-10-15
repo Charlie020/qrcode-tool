@@ -19,7 +19,7 @@ public class TwoActivity extends AppCompatActivity {
 
         Button GenerateQRButton = findViewById(R.id.generateQR);
         GenerateQRButton.setOnClickListener((new GenerateListener()));
-        Button GenerateODButton = findViewById(R.id.ChangeCode);
+        Button GenerateODButton = findViewById(R.id.generateOD);
         GenerateODButton.setOnClickListener((new GenerateListener()));
 
         ImageView ret = findViewById(R.id.Ret);
@@ -43,7 +43,7 @@ public class TwoActivity extends AppCompatActivity {
                 Intent intent = new Intent(TwoActivity.this, Generate.class);
                 intent.putExtra(Text, text);
                 if (v.getId() == R.id.generateQR) intent.putExtra(TYPE, "2");
-                else if (v.getId() == R.id.ChangeCode) intent.putExtra(TYPE, "1");
+                else if (v.getId() == R.id.generateOD) intent.putExtra(TYPE, "1");
                 startActivity(intent);
             }
         }
