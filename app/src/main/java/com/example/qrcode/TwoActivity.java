@@ -66,6 +66,7 @@ public class TwoActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(TwoActivity.this, MainActivity.class);
             startActivity(intent);
+            finish();
         }
     }
 }
