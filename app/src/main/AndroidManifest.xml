@@ -25,8 +25,8 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".TwoActivity"></activity>
-        <activity android:name=".Generate"></activity>
+        <activity android:name=".TwoActivity" />
+        <activity android:name=".Generate" />
     </application>
 
 </manifest>

@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button generate = this.findViewById(R.id.Generate);
-        generate.setOnClickListener(new changeXmlListener());
+
+        Button generate = this.findViewById(R.id.Generate);    //生成二维码
+        generate.setOnClickListener(new changeXmlListener());   //切换页面 开启新的activity
     }
 
     public class changeXmlListener implements View.OnClickListener {
