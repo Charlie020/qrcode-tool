@@ -19,11 +19,11 @@
         android:layout_width="124dp"
         android:layout_height="68dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="150dp"
         android:text="生成二维码"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,11 +32,11 @@
         android:layout_width="124dp"
         android:layout_height="68dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="416dp"
+        android:layout_marginTop="244dp"
         android:layout_marginEnd="150dp"
         android:text="生成一维码"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

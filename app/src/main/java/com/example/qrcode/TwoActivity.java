@@ -18,21 +18,22 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TwoActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.example.qrcode.Generate";
+    public static final String TYPE = "1";
+    public static final String Text = "tex";
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twolayout);
 
         Button GenerateQRButton = findViewById(R.id.generateQR);
-        GenerateQRButton.setOnClickListener((new GenerateQRListener()));
+        GenerateQRButton.setOnClickListener((new GenerateListener()));
         Button GenerateODButton = findViewById(R.id.generateOD);
-        GenerateODButton.setOnClickListener((new GenerateODListener()));
+        GenerateODButton.setOnClickListener((new GenerateListener()));
 
         ImageView ret = findViewById(R.id.Ret);
         ret.setOnClickListener(new changeXmlListener());
     }
 
-    public class GenerateQRListener implements View.OnClickListener {
+    public class GenerateListener implements View.OnClickListener {
         public void onClick(View v) {
             EditText multiText = findViewById(R.id.InputText);
             String text = multiText.getText().toString();
@@ -47,17 +48,19 @@ public class TwoActivity extends AppCompatActivity {
                 dialog.show();
             } else {
                 Intent intent = new Intent(TwoActivity.this, Generate.class);
-                intent.putExtra(EXTRA_MESSAGE, text);
+                intent.putExtra(Text, text);
+                if (v.getId() == R.id.generateQR) intent.putExtra(TYPE, "2");
+                else if (v.getId() == R.id.generateOD) intent.putExtra(TYPE, "1");
                 startActivity(intent);
             }
         }
     }
 
-    public class GenerateODListener implements View.OnClickListener {
-        public void onClick(View v) {
-
-        }
-    }
+//    public class GenerateODListener implements View.OnClickListener {
+//        public void onClick(View v) {
+//
+//        }
+//    }
 
     public class changeXmlListener implements View.OnClickListener {
         public void onClick(View v) {
