@@ -26,6 +26,7 @@ public class TwoActivity extends AppCompatActivity {
 
         Button GenerateQRButton = findViewById(R.id.generateQR);
         GenerateQRButton.setOnClickListener((new GenerateListener()));
+
         Button GenerateODButton = findViewById(R.id.generateOD);
         GenerateODButton.setOnClickListener((new GenerateListener()));
 

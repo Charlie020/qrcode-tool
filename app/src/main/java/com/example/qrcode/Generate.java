@@ -36,8 +36,7 @@ public class Generate extends AppCompatActivity {
 
     public class changeXmlListener implements View.OnClickListener {
         public void onClick(View v) {
-            Intent intent = new Intent(Generate.this, TwoActivity.class);
-            startActivity(intent);
+            finish();
         }
     }
 }
