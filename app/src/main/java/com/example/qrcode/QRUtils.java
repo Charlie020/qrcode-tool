@@ -2,7 +2,6 @@ package com.example.qrcode;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
