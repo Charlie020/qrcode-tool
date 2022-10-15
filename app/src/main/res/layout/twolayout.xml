@@ -16,33 +16,43 @@
 
     <Button
         android:id="@+id/generateQR"
-        android:layout_width="109dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="151dp"
-        android:layout_marginTop="280dp"
+        android:layout_width="124dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="150dp"
         android:text="生成二维码"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/generateTXM"
-        android:layout_width="109dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="378dp"
+        android:id="@+id/generateOD"
+        android:layout_width="124dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="150dp"
         android:text="生成一维码"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="196dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="104dp"
-        android:gravity="center"
-        android:hint="请输入文本"
-        android:textSize="20sp"
+    <EditText
+        android:id="@+id/InputText"
+        android:layout_width="244dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="71dp"
+        android:ems="10"
+        android:gravity="start"
+        android:hint="请在此输入内容"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

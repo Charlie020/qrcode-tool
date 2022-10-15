@@ -1,6 +1,10 @@
 package com.example.qrcode;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     public class changeXmlListener implements View.OnClickListener {
         public void onClick(View v) {
+//            FragmentManager manager = getSupportFragmentManager();
+//            FragmentTransaction trans = manager.beginTransaction();
+//            trans.replace()
             Intent intent = new Intent(MainActivity.this, TwoActivity.class);
             startActivity(intent);
         }
