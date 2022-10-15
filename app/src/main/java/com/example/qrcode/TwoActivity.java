@@ -63,9 +63,9 @@ public class TwoActivity extends AppCompatActivity {
 //    }
 
     public class changeXmlListener implements View.OnClickListener {
+        //返回按钮实践监听器 结束此activity
         public void onClick(View v) {
-            Intent intent = new Intent(TwoActivity.this, MainActivity.class);
-            startActivity(intent);
+            finish();
         }
     }
 }
