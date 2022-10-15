@@ -30,7 +30,7 @@ android {
         variant ->
             variant.outputs.all {
                 //在这里修改apk文件名，引号内的字符串都可以随便定义
-                outputFileName = "QRScan.apk"
+                outputFileName = "QRCodeTool.apk"
             }
     }
 }
