@@ -7,47 +7,62 @@
 
     <ImageView
         android:id="@+id/img"
-        android:layout_width="411dp"
-        android:layout_height="273dp"
-        android:layout_marginTop="104dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <ImageView
         android:id="@+id/Ret"
-        android:layout_width="88dp"
-        android:layout_height="46dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.02"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Button
         android:id="@+id/Save"
-        android:layout_width="121dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="424dp"
-        android:layout_marginEnd="145dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="保存至相册"
+        android:background="@drawable/button_style"
+        android:textColor="#000000"
+        app:iconTint="#000000"
+        app:icon="@mipmap/photo"
+        app:iconGravity="top"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
 
     <Button
         android:id="@+id/ChangeCode"
-        android:layout_width="121dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="492dp"
-        android:layout_marginEnd="145dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="转为条形码"
+        android:background="@drawable/button_style"
+        android:textColor="#000000"
+        app:iconTint="#000000"
+        app:icon="@mipmap/change"
+        app:iconGravity="top"
+        app:iconPadding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

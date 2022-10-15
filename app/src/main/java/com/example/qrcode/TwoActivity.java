@@ -28,7 +28,7 @@ public class TwoActivity extends AppCompatActivity {
 
     public class GenerateListener implements View.OnClickListener {
         public void onClick(View v) {
-            EditText multiText = findViewById(R.id.InputText);
+            EditText multiText = findViewById(R.id.InputText);   //获取输入内容
             String text = multiText.getText().toString();
             if (text.length() == 0) {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(TwoActivity.this);
