@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TwoActivity extends AppCompatActivity {
@@ -16,6 +17,12 @@ public class TwoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.twolayout);
+
+        //去除默认标题栏
+        ActionBar actionBar=getSupportActionBar();
+        if(actionBar!=null){
+            actionBar.hide();
+        }
 
         Button GenerateQRButton = findViewById(R.id.generateQR);
         GenerateQRButton.setOnClickListener((new GenerateListener()));

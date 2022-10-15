@@ -12,57 +12,57 @@
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_bias="0.285"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <ImageView
         android:id="@+id/Ret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@mipmap/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.02"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        app:layout_constraintHorizontal_bias="0.02" />
 
     <Button
         android:id="@+id/Save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="保存至相册"
         android:background="@drawable/button_style"
+        android:text="保存至相册"
         android:textColor="#000000"
-        app:iconTint="#000000"
         app:icon="@mipmap/photo"
         app:iconGravity="top"
         app:iconPadding="10dp"
+        app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/ChangeCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="转为条形码"
         android:background="@drawable/button_style"
+        android:text="转为条形码"
         android:textColor="#000000"
-        app:iconTint="#000000"
         app:icon="@mipmap/change"
         app:iconGravity="top"
         app:iconPadding="10dp"
+        app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.85" />
 </androidx.constraintlayout.widget.ConstraintLayout>

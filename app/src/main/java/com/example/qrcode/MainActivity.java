@@ -1,5 +1,6 @@
 package com.example.qrcode;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //去除默认标题栏
+        ActionBar actionBar=getSupportActionBar();
+        if(actionBar!=null){
+            actionBar.hide();
+        }
+
 
         Button generate = this.findViewById(R.id.Generate);    //生成二维码
         generate.setOnClickListener(new changeXmlListener());   //切换页面 开启新的activity

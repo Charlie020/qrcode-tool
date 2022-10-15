@@ -3,9 +3,9 @@
     <item android:state_pressed="false">
         <shape>
             <!--背景-->
-            <solid android:color="#00FFFFFF"/>
+            <solid android:color="#00000000"/>
             <!--边框-->
-            <stroke android:color="#000000"
+            <stroke android:color="#FFFFFF"
                 android:width="2dp"/>
             <!--圆角-->
             <corners android:radius="7dp"/>
@@ -24,15 +24,14 @@
         <shape>
 
             <!--背景-->
-            <solid android:color="#08A5A5A5"/>
-            <!--梯度-->
-            <gradient android:startColor="#081825" android:endColor="#000000" />
+            <solid android:color="#00000000"/>
             <!--边框-->
-            <stroke android:width="2dp" android:color="#000000" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
             <!--圆角-->
             <corners android:radius="7dp" />
             <!--边距-->
-            <padding android:bottom="2dp"
+            <padding
+                android:bottom="2dp"
                 android:top="2dp"
                 android:right="6dp"
                 android:left="6dp"/>
