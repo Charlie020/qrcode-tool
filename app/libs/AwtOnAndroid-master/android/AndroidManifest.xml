@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="julianwi.awtpeer"
+    android:versionCode="4"
+    android:versionName="0.4" >
+
+    <uses-sdk
+        android:minSdkVersion="1"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:icon="@drawable/duke"
+        android:label="awtonandroid">
+        <activity android:label="java" android:name=".WindowActivity" android:configChanges="orientation|screenSize" android:taskAffinity=":awt">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:label="java2" android:name=".WindowActivity2" android:configChanges="orientation|screenSize" android:taskAffinity=":awt2">
+            <intent-filter>
+                <action android:name="android.intent.action.HOME" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

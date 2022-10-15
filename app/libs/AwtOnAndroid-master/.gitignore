@@ -1,0 +1,22 @@
+.classpath
+*.class
+.settings
+.project
+.cproject
+.externalToolBuilders
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.apk
+*.tar.gz
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+.directory
+
+# Generated files
+dist/
+*.so
