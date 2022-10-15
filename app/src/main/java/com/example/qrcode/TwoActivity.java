@@ -51,8 +51,6 @@ public class TwoActivity extends AppCompatActivity {
 
     public class changeXmlListener implements View.OnClickListener {
         public void onClick(View v) {
-            Intent intent = new Intent(TwoActivity.this, MainActivity.class);
-            startActivity(intent);
             finish();
         }
     }

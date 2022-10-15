@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
 //            trans.replace()
             Intent intent = new Intent(MainActivity.this, TwoActivity.class);
             startActivity(intent);
-            finish();
         }
     }
 }
