@@ -1,18 +1,11 @@
 package com.example.qrcode;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.MultiAutoCompleteTextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +19,7 @@ public class TwoActivity extends AppCompatActivity {
 
         Button GenerateQRButton = findViewById(R.id.generateQR);
         GenerateQRButton.setOnClickListener((new GenerateListener()));
-        Button GenerateODButton = findViewById(R.id.generateOD);
+        Button GenerateODButton = findViewById(R.id.ChangeCode);
         GenerateODButton.setOnClickListener((new GenerateListener()));
 
         ImageView ret = findViewById(R.id.Ret);
@@ -50,17 +43,11 @@ public class TwoActivity extends AppCompatActivity {
                 Intent intent = new Intent(TwoActivity.this, Generate.class);
                 intent.putExtra(Text, text);
                 if (v.getId() == R.id.generateQR) intent.putExtra(TYPE, "2");
-                else if (v.getId() == R.id.generateOD) intent.putExtra(TYPE, "1");
+                else if (v.getId() == R.id.ChangeCode) intent.putExtra(TYPE, "1");
                 startActivity(intent);
             }
         }
     }
-
-//    public class GenerateODListener implements View.OnClickListener {
-//        public void onClick(View v) {
-//
-//        }
-//    }
 
     public class changeXmlListener implements View.OnClickListener {
         public void onClick(View v) {

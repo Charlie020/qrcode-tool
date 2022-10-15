@@ -19,24 +19,24 @@
         android:layout_width="124dp"
         android:layout_height="68dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="292dp"
         android:layout_marginEnd="150dp"
         android:text="生成二维码"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/generateOD"
+        android:id="@+id/ChangeCode"
         android:layout_width="124dp"
         android:layout_height="68dp"
         android:layout_marginStart="150dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="388dp"
         android:layout_marginEnd="150dp"
         android:text="生成一维码"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
