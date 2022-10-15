@@ -1,6 +1,5 @@
 package com.example.qrcode;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TwoActivity extends AppCompatActivity {
@@ -34,14 +32,6 @@ public class TwoActivity extends AppCompatActivity {
             String text = multiText.getText().toString();
             if (text.length() == 0) {
                 Toast.makeText(TwoActivity.this,"输入栏为空，请输入内容",Toast.LENGTH_SHORT).show();
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(TwoActivity.this);
-//                dialog.setTitle("Note");
-//                dialog.setMessage("输入栏为空，请输入内容。");
-//                dialog.setCancelable(false);
-//                dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialogInterface, int i) {}
-//                });
-//                dialog.show();
             } else {
                 Intent intent = new Intent(TwoActivity.this, Generate.class);
                 intent.putExtra(Text, text);
