@@ -178,7 +178,6 @@ public class Generate extends AppCompatActivity {
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
                 out.flush();
                 out.close();
-                Toast.makeText(context, "图片保存成功!", Toast.LENGTH_SHORT);
             } catch (IOException e) {
                 Toast.makeText(context,"图片保存失败", Toast.LENGTH_SHORT);
                 e.printStackTrace();
