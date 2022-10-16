@@ -56,7 +56,10 @@ public class TwoActivity extends AppCompatActivity {
                     boolean flag = true;
                     int n = text.length();
                     for (int i = 0; i < n; i++) {
-                        if (text.charAt(i) < 32 || text.charAt(i) > 127) flag = false;
+                        if (text.charAt(i) < 32 || text.charAt(i) > 127) {
+                            flag = false;
+                            break;
+                        }
                     }
                     if (!flag) {
                         Toast.makeText(TwoActivity.this,"条形码中不能包含中文字符和换行",Toast.LENGTH_SHORT).show();
