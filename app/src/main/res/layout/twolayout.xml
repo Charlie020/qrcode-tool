@@ -122,7 +122,7 @@
         android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         app:backgroundTint="#00FFFFFF"
         app:cornerRadius="9dp"
-        app:icon="@mipmap/scan"
+        app:icon="@mipmap/onedcode"
         app:iconGravity="textTop"
         app:iconPadding="15dp"
         app:iconTint="#FFFFFF"
