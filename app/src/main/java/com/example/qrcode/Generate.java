@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.net.ParseException;
@@ -63,7 +64,8 @@ public class Generate extends AppCompatActivity {
         changeButton = findViewById(R.id.ChangeCode);
         changeButton.setOnClickListener(new ChangeListener());
         if (Type.equals("2")) {
-            bitmap = QRUtils.createQRCode(text,1000,1000,null);
+            Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.njupt);
+            bitmap = QRUtils.createQRCode(text,1000,1000,logo);
             changeButton.setText("转为条形码");
         } else {
             bitmap = QRUtils.createODcode(text);
@@ -188,7 +190,8 @@ public class Generate extends AppCompatActivity {
             Bitmap bitmap;
             ImageView img = findViewById(R.id.img);
             if (changeButton.getText().equals("转为二维码")) {
-                bitmap = QRUtils.createQRCode(text,1000,1000,null);
+                Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.njupt);
+                bitmap = QRUtils.createQRCode(text,1000,1000,logo);
                 img.setImageBitmap(bitmap);
                 changeButton.setText("转为条形码");
             } else {
