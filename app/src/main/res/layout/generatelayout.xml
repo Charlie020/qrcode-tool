@@ -3,66 +3,109 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@mipmap/bgpic">
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/linear_layout_style"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.285"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.285"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/Ret"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@mipmap/back"
+        android:background="@mipmap/backwhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.02"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02"
-        app:layout_constraintHorizontal_bias="0.02" />
+        app:layout_constraintVertical_bias="0.02" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/Save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:text="保存至相册"
-        android:textColor="#000000"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:stateListAnimator="@null"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="9dp"
         app:icon="@mipmap/photo"
-        app:iconGravity="top"
-        app:iconPadding="10dp"
-        app:iconTint="#000000"
+        app:iconGravity="textTop"
+        app:iconPadding="15dp"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.7"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
 
-    <Button
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/ChangeCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_style"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:text="转为条形码"
-        android:textColor="#000000"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:stateListAnimator="@null"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="9dp"
         app:icon="@mipmap/change"
-        app:iconGravity="top"
-        app:iconPadding="10dp"
-        app:iconTint="#000000"
+        app:iconGravity="textTop"
+        app:iconPadding="15dp"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintVertical_bias="0.85"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

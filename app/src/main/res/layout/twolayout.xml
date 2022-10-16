@@ -7,6 +7,23 @@
     android:background="@mipmap/bgpic"
     android:orientation="vertical">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请输入并选择功能："
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+
     <ImageView
         android:id="@+id/Ret"
         android:layout_width="wrap_content"
@@ -25,6 +42,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
+        android:stateListAnimator="@null"
         android:text="生成二维码"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -41,7 +59,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55"
+        app:layout_constraintVertical_bias="0.6"
         app:strokeColor="@color/white"
         app:strokeWidth="2dp" />
 
@@ -50,18 +68,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/text_style"
+        android:cursorVisible="true"
         android:ems="14"
         android:gravity="top"
         android:hint="请在此输入内容...   \n\n\n"
+        android:textCursorDrawable="@drawable/guangbiao_style"
         android:inputType="textMultiLine"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textCursorDrawable="@drawable/guangbiao_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/generateOD"
@@ -69,6 +88,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
+        android:stateListAnimator="@null"
         android:text="扫描二维码"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
@@ -85,7 +105,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725"
+        app:layout_constraintVertical_bias="0.775"
         app:strokeColor="@color/white"
         app:strokeWidth="2dp" />
 
