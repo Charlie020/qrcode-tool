@@ -126,7 +126,7 @@ public class Generate extends AppCompatActivity {
             matrix.postScale(0.5f,0.5f); //长和宽放大缩小的比例
             bmp = Bitmap.createBitmap(bmp,0,0,bmp.getWidth(),bmp.getHeight(),matrix,true);
             Date date = new Date();
-            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
             saveBitmap(bmp, f.format(date) + ".JPEG");
         }
 
@@ -144,7 +144,7 @@ public class Generate extends AppCompatActivity {
                     out.flush();
                     out.close();
                     // 插入图库
-                    MediaStore.Images.Media.insertImage(context.getContentResolver(), file.getAbsolutePath(), bitName, null);
+//                    MediaStore.Images.Media.insertImage(context.getContentResolver(), file.getAbsolutePath(), bitName, null);
                 }
             }
             catch (FileNotFoundException e) {
@@ -181,15 +181,25 @@ public class Generate extends AppCompatActivity {
             Intent intent = getIntent();
             String text = intent.getStringExtra(TwoActivity.Text);
             Bitmap bitmap;
+            ImageView img = findViewById(R.id.img);
             if (changeButton.getText().equals("转为二维码")) {
                 bitmap = QRUtils.createQRCode(text,1000,1000,null);
+                img.setImageBitmap(bitmap);
                 changeButton.setText("转为条形码");
             } else {
-                bitmap = QRUtils.createODcode(text);
-                changeButton.setText("转为二维码");
+                boolean flag = true;
+                int n = text.length();
+                for (int i = 0; i < n; i++) {
+                    if (text.charAt(i) < 32 || text.charAt(i) > 127) flag = false;
+                }
+                if (!flag) {
+                    Toast.makeText(Generate.this,"二维码内容含有中文字符和换行，不能转为条形码。",Toast.LENGTH_SHORT).show();
+                } else {
+                    bitmap = QRUtils.createODcode(text);
+                    img.setImageBitmap(bitmap);
+                    changeButton.setText("转为二维码");
+                }
             }
-            ImageView img = findViewById(R.id.img);
-            img.setImageBitmap(bitmap);
         }
     }
 

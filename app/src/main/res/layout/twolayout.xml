@@ -89,7 +89,7 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:stateListAnimator="@null"
-        android:text="扫描二维码"
+        android:text="生成条形码"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="17sp"
