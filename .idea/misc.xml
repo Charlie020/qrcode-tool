@@ -3,20 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/QRCodeTool/app/src/main/res/drawable/button_style.xml" value="0.2265" />
+        <entry key="..\:/QRCodeTool/app/src/main/res/drawable/guangbiao_style.xml" value="0.2265" />
+        <entry key="..\:/QRCodeTool/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
+        <entry key="..\:/QRCodeTool/app/src/main/res/layout/generatelayout.xml" value="0.24947916666666667" />
+        <entry key="..\:/QRCodeTool/app/src/main/res/layout/twolayout.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCode/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/drawable/button_style.xml" value="0.1935" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/drawable/guangbiao_style.xml" value="0.1935" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/drawable/linear_layout_style.xml" value="0.213" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/drawable/text_style.xml" value="0.301" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/activity_main2.xml" value="0.13541666666666666" />
-        <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/generatelayout.xml" value="0.4" />
-        <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/twolayout.xml" value="0.4" />
+        <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/generatelayout.xml" value="0.264" />
+        <entry key="..\:/Users/16046/Desktop/Programming/Android/QRCodeScan/app/src/main/res/layout/twolayout.xml" value="0.25" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

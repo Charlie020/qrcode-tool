@@ -32,6 +32,8 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".Generate"
             android:screenOrientation="portrait"/>
+
+
     </application>
 
 </manifest>
