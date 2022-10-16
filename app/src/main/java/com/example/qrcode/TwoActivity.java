@@ -28,6 +28,8 @@ public class TwoActivity extends AppCompatActivity {
         GenerateQRButton.setOnClickListener((new GenerateListener()));
         Button GenerateODButton = findViewById(R.id.generateOD);
         GenerateODButton.setOnClickListener((new GenerateListener()));
+        Button ClearButton = findViewById(R.id.Clear);
+        ClearButton.setOnClickListener(new ClearListener());
 
         ImageView ret = findViewById(R.id.Ret);
         ret.setOnClickListener(new changeXmlListener());
@@ -62,6 +64,13 @@ public class TwoActivity extends AppCompatActivity {
                 }
 
             }
+        }
+    }
+
+    public class ClearListener implements View.OnClickListener {
+        public void onClick(View v) {
+            EditText multiText = findViewById(R.id.InputText);   //获取输入内容
+            multiText.setText("");
         }
     }
 

@@ -8,6 +8,32 @@
     android:orientation="vertical">
 
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/Clear"
+        android:layout_width="73dp"
+        android:layout_height="51dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:stateListAnimator="@null"
+        android:text="清空"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="9dp"
+        app:iconGravity="textTop"
+        app:iconPadding="15dp"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47"
+        app:strokeColor="@color/white"
+        app:strokeWidth="2dp" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
