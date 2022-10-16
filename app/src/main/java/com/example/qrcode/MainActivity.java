@@ -12,6 +12,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //将状态栏透明
+        StatusBar statusBar = new StatusBar(MainActivity.this);
+        statusBar.setStatusBarColor(R.color.transparent);
+
         setContentView(R.layout.activity_main);
 
         //去除默认标题栏
