@@ -43,6 +43,11 @@ public class Generate extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //将状态栏透明
+        StatusBar statusBar = new StatusBar(Generate.this);
+        statusBar.setStatusBarColor(R.color.transparent);
+
         setContentView(R.layout.generatelayout);
 
         //去除默认标题栏
