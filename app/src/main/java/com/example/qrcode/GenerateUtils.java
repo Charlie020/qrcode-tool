@@ -13,7 +13,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import java.util.HashMap;
 import java.util.Map;
 
-public class QRUtils {
+public class GenerateUtils {
     public static Bitmap createODcode(String content) {
         try {
             BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.CODE_128, 1200, 350);

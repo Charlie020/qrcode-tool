@@ -67,10 +67,10 @@ public class Generate extends AppCompatActivity {
         changeButton.setOnClickListener(new ChangeListener());
         if (Type.equals("2")) {
             Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.njupt);
-            bitmap = QRUtils.createQRCode(text,1000,1000,logo);
+            bitmap = GenerateUtils.createQRCode(text,1000,1000,logo);
             changeButton.setText("转为条形码");
         } else {
-            bitmap = QRUtils.createODcode(text);
+            bitmap = GenerateUtils.createODcode(text);
             changeButton.setText("转为二维码");
         }
         img = findViewById(R.id.img);
@@ -184,7 +184,7 @@ public class Generate extends AppCompatActivity {
             ImageView img = findViewById(R.id.img);
             if (changeButton.getText().equals("转为二维码")) {
                 Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.njupt);
-                bitmap = QRUtils.createQRCode(text,1000,1000,logo);
+                bitmap = GenerateUtils.createQRCode(text,1000,1000,logo);
                 img.setImageBitmap(bitmap);
                 changeButton.setText("转为条形码");
             } else {
@@ -199,7 +199,7 @@ public class Generate extends AppCompatActivity {
                 if (!flag) {
                     Toast.makeText(Generate.this,"二维码内容含有中文字符或换行符，不能转为条形码。",Toast.LENGTH_SHORT).show();
                 } else {
-                    bitmap = QRUtils.createODcode(text);
+                    bitmap = GenerateUtils.createODcode(text);
                     img.setImageBitmap(bitmap);
                     changeButton.setText("转为二维码");
                 }
