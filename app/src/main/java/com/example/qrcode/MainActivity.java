@@ -2,9 +2,8 @@ package com.example.qrcode;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     //消息回传  处理扫描界面获得的二维码信息并在当前活动进行处理
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -55,20 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
         IntentResult intentResult=IntentIntegrator.parseActivityResult(requestCode,resultCode,data);  //获取回传信息
 
-        Toast toast=Toast.makeText(getApplicationContext(), intentResult.getContents(), Toast.LENGTH_SHORT);
-        toast.show();
-
         if (intentResult.getContents()!=null){
-            AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Result");
-            builder.setMessage(intentResult.getContents());
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                }
-            });
-            builder.show();
+            //浏览器部分  增加网络权限
+            String uriString=intentResult.getContents();   //获取URL
+            Intent intent = new Intent();
+            intent.setAction("android.intent.action.VIEW");
+            Uri content_url = Uri.parse(uriString);
+            intent.setData(content_url);
+            startActivity(intent);
+
+
         }
     }
 
