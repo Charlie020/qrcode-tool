@@ -9,6 +9,28 @@
 
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stateListAnimator="@null"
+        android:text="粘贴"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        app:backgroundTint="#00FFFFFF"
+        app:cornerRadius="7dp"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.643"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.468"
+        app:strokeColor="@color/white"
+        app:strokeWidth="0dp" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/Clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,10 +45,10 @@
         app:iconPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47"
+        app:layout_constraintVertical_bias="0.468"
         app:strokeColor="@color/white"
         app:strokeWidth="0dp" />
 
