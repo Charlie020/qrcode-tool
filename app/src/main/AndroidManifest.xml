@@ -36,7 +36,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name=".TwoActivity"
+        <activity android:name=".InputActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".Generate"
             android:screenOrientation="portrait"/>

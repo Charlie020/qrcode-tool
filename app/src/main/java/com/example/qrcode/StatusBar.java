@@ -3,7 +3,6 @@ package com.example.qrcode;
 import android.app.Activity;
 import android.os.Build;
 import android.view.View;
-import android.view.WindowManager;
 
 public class StatusBar {
     private Activity activity;

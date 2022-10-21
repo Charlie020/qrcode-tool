@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -71,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     public class changeXmlListener implements View.OnClickListener {
         //切换界面的类
         public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this, TwoActivity.class);  //intent是Android里用于activity之间信息传递的类
+            Intent intent = new Intent(MainActivity.this, InputActivity.class);  //intent是Android里用于activity之间信息传递的类
             startActivity(intent);
         }
     }
