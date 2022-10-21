@@ -1,5 +1,8 @@
 package com.example.qrcode;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +35,9 @@ public class InputActivity extends AppCompatActivity {
         GenerateQRButton.setOnClickListener((new GenerateListener()));
         Button GenerateODButton = findViewById(R.id.generateOD);
         GenerateODButton.setOnClickListener((new GenerateListener()));
+
+        Button CopyButton = findViewById(R.id.copy);
+        CopyButton.setOnClickListener(new CopyListener());
         Button ClearButton = findViewById(R.id.Clear);
         ClearButton.setOnClickListener(new ClearListener());
 
@@ -70,6 +76,26 @@ public class InputActivity extends AppCompatActivity {
                     }
                 }
 
+            }
+        }
+    }
+
+    public class CopyListener implements View.OnClickListener {
+        public void onClick(View v) {
+            //获取系统剪贴板服务
+            ClipboardManager clipboardManager = (ClipboardManager)InputActivity.this.getSystemService(Context.CLIPBOARD_SERVICE);
+            if (clipboardManager != null) {
+                // 获取剪贴板的剪贴数据集
+                ClipData clipData = clipboardManager.getPrimaryClip();
+                if (clipData != null && clipData.getItemCount() > 0) {
+                    // 从数据集中获取（粘贴）第一条文本数据
+                    ClipData.Item item = clipData.getItemAt(0);
+                    if (null != item) {
+                        String content = item.getText().toString();
+                        EditText multiText = findViewById(R.id.InputText);
+                        multiText.setText(content);
+                    }
+                }
             }
         }
     }
