@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 IntentIntegrator intentIntegrator =new IntentIntegrator(MainActivity.this);
                 intentIntegrator.setPrompt("请将识别框对准二维码");
                 intentIntegrator.setBeepEnabled(true);
@@ -53,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
     //消息回传  处理扫描界面获得的二维码信息并在当前活动进行处理
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class RegexUtill {
+    public static class RegexUtill {
         //判断字符串是否是URL的类
 
         public boolean verifyUrl(String url){

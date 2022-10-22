@@ -2,8 +2,10 @@ package com.example.qrcode;
 
 import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
 
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -22,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.ChecksumException;
@@ -31,6 +34,8 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.RGBLuminanceSource;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.journeyapps.barcodescanner.CaptureActivity;
 import com.journeyapps.barcodescanner.CaptureManager;
@@ -41,27 +46,28 @@ import java.nio.charset.Charset;
 import java.util.Hashtable;
 
 
-public class Capture extends CaptureActivity {
+public class Capture extends Activity {
 
     private CaptureManager capture;
     private DecoratedBarcodeView barcodeScannerView;
     private boolean flag = true;
-    private String photo_path;
+    private String photo_path;//获取相册图片信息
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scan);
 
-        barcodeScannerView = (DecoratedBarcodeView) findViewById(R.id.viewfinder_view);
+        barcodeScannerView = (DecoratedBarcodeView) findViewById(R.id.viewfinder_view);//设置进入相册按钮
 
         capture = new CaptureManager(this, barcodeScannerView);
-        capture.initializeFromIntent(getIntent(), savedInstanceState);
+        capture.initializeFromIntent(getIntent(), savedInstanceState);//打开相册
         capture.decode();
         setClick();
+
     }
     @Override
-    protected void onResume() {
+    protected void onResume() {//captureactivity函数重构，下面类似
         super.onResume();
         capture.onResume();
     }
@@ -99,7 +105,9 @@ public class Capture extends CaptureActivity {
         findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(Capture.this, MainActivity.class);
+                finish();//intent是Android里用于activity之间信息传递的类
+                startActivity(intent);
             }
         });
 
@@ -110,20 +118,20 @@ public class Capture extends CaptureActivity {
             }
         });
 
-        findViewById(R.id.mo_scanner_photo).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.mo_scanner_photo).setOnClickListener(new View.OnClickListener() {//进入相册选取照片
             @Override
             public void onClick(View view) {
                 Intent innerIntent = new Intent(); // "android.intent.action.GET_CONTENT"
                 if (Build.VERSION.SDK_INT < 19) {
                     innerIntent.setAction(Intent.ACTION_GET_CONTENT);
                 } else {
-                    // innerIntent.setAction(Intent.ACTION_OPEN_DOCUMENT);  这个方法报 图片地址 空指针；使用下面的方法
+                    //  这个方法报 图片地址
                     innerIntent.setAction(Intent.ACTION_PICK);
                 }
 
                 innerIntent.setType("image/*");
 
-                Intent wrapperIntent = Intent.createChooser(innerIntent, "选择二维码图片");
+                Intent wrapperIntent = Intent.createChooser(innerIntent, "选择二维码图片");//选择二维码图片传入
 
                 startActivityForResult(wrapperIntent, REQUEST_CODE);
             }
@@ -134,7 +142,6 @@ public class Capture extends CaptureActivity {
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
@@ -143,20 +150,22 @@ public class Capture extends CaptureActivity {
 
 
                     String[] proj = { MediaStore.Images.Media.DATA };
+
                     // 获取选中图片的路径
                     Cursor cursor = getContentResolver().query(data.getData(),
                             proj, null, null, null);
 
-                    if (cursor.moveToFirst()) {
+                    if (cursor != null) {
+                        cursor.moveToFirst();
                         int column_index = cursor
-                                .getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+                                .getColumnIndexOrThrow(proj[0]);
                         photo_path = cursor.getString(column_index);
                         if (photo_path == null) {
                             photo_path = getPath(getApplicationContext(),
                                     data.getData());
                         }
-                    }
 
+                    }
                     cursor.close();
 
                     new Thread(new Runnable() {
@@ -165,28 +174,49 @@ public class Capture extends CaptureActivity {
                         public void run() {
 
                             Result result = scanningImage(photo_path);
+
                             // String result = decode(photo_path);
                             if (result == null) {
                                 Looper.prepare();
-                                Toast.makeText(Capture.this, com.google.zxing.client.android.R.string.zxing_app_name, Toast.LENGTH_SHORT)
-                                        .show();
+                                Toast.makeText(getApplicationContext(), "图片格式有误",Toast.LENGTH_SHORT).show();
                                 Looper.loop();
                             } else {
                                 // 数据返回
                                 String recode = recode(result.toString());
-                                Intent data = new Intent();
-                                data.putExtra("recodeResult", recode);
-                                setResult(300, data);
-                                finish();
+                                boolean isURL=new MainActivity.RegexUtill().verifyUrl(recode);
+
+                                if (isURL){
+                                    //浏览器部分  增加网络权限
+                                    String uriString=recode;   //获取URL
+                                    Intent intent = new Intent();
+                                    intent.setAction("android.intent.action.VIEW");
+                                    Uri content_url = Uri.parse(uriString);
+                                    intent.setData(content_url);
+                                    startActivity(intent);
+                                }
+                                else {
+                                    //不是URL 直接将文本输出
+                                    //使用一个文本确认框的形式
+                                    AlertDialog.Builder builder=new AlertDialog.Builder(Capture.this);
+                                    builder.setTitle("文本内容：");
+                                    builder.setMessage(recode);
+                                    builder.setPositiveButton("退出", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            dialogInterface.dismiss();
+                                        }
+                                    });
+                                    builder.show();
+                                }
                             }
                         }
                     }).start();
+
+
             }
 
         }
-
     }
-
 
 
     protected Result scanningImage(String path) {
