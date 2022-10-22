@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--二维码条形码生成界面样式-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +7,8 @@
     android:layout_height="match_parent"
     android:background="@mipmap/bgpic">
 
-
+<!--为了让二维码在彩色背景下合理显示，先设置了一个layout，封装二维码出现的位置
+    同时使用了布局管理器可以给布局管理器设置样式，使用xml语言设计，使用android:background="@drawable/linear_layout_style"设置-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2">
 
+        <!--显示的二维码在布局管理器内-->
         <ImageView
             android:id="@+id/img"
             android:layout_width="wrap_content"

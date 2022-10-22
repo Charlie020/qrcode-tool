@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--主界面样式-->
+<!--constraintlayout可以适配不同尺寸的屏幕，并且使用了先进的百分比布局，可以在不同尺寸上都得到一样的效果-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +9,10 @@
     android:background="@mipmap/bgpic"
     tools:context=".MainActivity">
 
+<!--MaterialButton是一个很新的button组件，可以方便的设置button的样式，不需要借助xml单独设置样式-->
+<!--wrap_content是让样式统一的关键-->
+<!--layout_constraintBottom_toBottomOf等是constraintlayout的主要方法之一，类似于relativelayout-->
+<!--layout_constraintHorizontal_bias等是constraintlayout中控制组件位置的主要方法，使用百分比可以在不同屏幕上得到同样效果-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/Generate"
         android:layout_width="wrap_content"
