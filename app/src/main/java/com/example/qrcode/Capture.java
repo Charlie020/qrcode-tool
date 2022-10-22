@@ -2,7 +2,6 @@ package com.example.qrcode;
 
 import static com.google.zxing.integration.android.IntentIntegrator.REQUEST_CODE;
 
-import android.app.Activity;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +15,6 @@ import android.os.Environment;
 import android.os.Looper;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
-import android.telephony.TelephonyScanManager;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -33,7 +31,6 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.RGBLuminanceSource;
 import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
-import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.journeyapps.barcodescanner.CaptureActivity;
 import com.journeyapps.barcodescanner.CaptureManager;
@@ -42,7 +39,6 @@ import com.journeyapps.barcodescanner.DecoratedBarcodeView;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Hashtable;
-import com.google.zxing.integration.android.IntentResult;
 
 
 public class Capture extends CaptureActivity {
@@ -55,7 +51,7 @@ public class Capture extends CaptureActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.saomiao);
+        setContentView(R.layout.scan);
 
         barcodeScannerView = (DecoratedBarcodeView) findViewById(R.id.viewfinder_view);
 

@@ -14,27 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class GenerateUtils {
-    public static Bitmap createODcode(String content) {
-        try {
-            BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.CODE_128, 1200, 350);
-            int width = bitMatrix.getWidth();
-            int height = bitMatrix.getHeight();
-            int[] pixels = new int[width * height];
-            for (int y = 0; y < height; y++) {
-                int offset = y * width;
-                for (int x = 0; x < width; x++) {
-                    pixels[offset + x] = bitMatrix.get(x, y) ? 0xff000000 : 0xFFFFFFFF;
-                }
-            }
-            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
-            return bitmap;
-        } catch (WriterException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
+    // 生成二维码
     public static Bitmap createQRCode(String content, int widthPix, int heightPix, Bitmap logoBm) {
         try {
             if (content == null || "".equals(content)) {
@@ -49,8 +29,7 @@ public class GenerateUtils {
             BitMatrix bitMatrix = new QRCodeWriter().encode(content, BarcodeFormat.QR_CODE, widthPix,
                     heightPix, hints);
             int[] pixels = new int[widthPix * heightPix];
-            // 下面这里按照二维码的算法，逐个生成二维码的图片，
-            // 两个for循环是图片横列扫描的结果
+            // 横列扫描图片，逐个生成二维码
             for (int y = 0; y < heightPix; y++) {
                 for (int x = 0; x < widthPix; x++) {
                     if (bitMatrix.get(x, y)) {
@@ -66,7 +45,7 @@ public class GenerateUtils {
             if (logoBm != null) {
                 bitmap = addLogo(bitmap, logoBm);
             }
-            //必须使用compress方法将bitmap保存到文件中再进行读取。直接返回的bitmap是没有任何压缩的，内存消耗巨大！
+            //使用compress方法将bitmap压缩到文件中再进行读取。直接返回的bitmap会导致内存消耗巨大
             return bitmap;
         } catch (WriterException e) {
             e.printStackTrace();
@@ -108,5 +87,27 @@ public class GenerateUtils {
             e.getStackTrace();
         }
         return bitmap;
+    }
+
+    //生成条形码
+    public static Bitmap createODcode(String content) {
+        try {
+            BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.CODE_128, 1200, 350);
+            int width = bitMatrix.getWidth();
+            int height = bitMatrix.getHeight();
+            int[] pixels = new int[width * height];
+            for (int y = 0; y < height; y++) {
+                int offset = y * width;
+                for (int x = 0; x < width; x++) {
+                    pixels[offset + x] = bitMatrix.get(x, y) ? 0xff000000 : 0xFFFFFFFF;
+                }
+            }
+            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
+            return bitmap;
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

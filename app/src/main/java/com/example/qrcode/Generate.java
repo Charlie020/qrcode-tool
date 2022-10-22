@@ -61,9 +61,9 @@ public class Generate extends AppCompatActivity {
             actionBar.hide();
         }
 
-        // 初始化界面
+        // 实际展示生成码的界面
         Intent intent = getIntent();
-        String text = intent.getStringExtra(InputActivity.Text);
+        String text = intent.getStringExtra(InputActivity.Text);  // 获取传入的内容和识别码
         String Type = intent.getStringExtra(InputActivity.TYPE);
         changeButton = findViewById(R.id.ChangeCode);
         changeButton.setOnClickListener(new ChangeListener());
@@ -209,9 +209,13 @@ public class Generate extends AppCompatActivity {
                 if (!flag) {
                     Toast.makeText(Generate.this,"二维码内容含有中文字符或换行符，不能转为条形码。",Toast.LENGTH_SHORT).show();
                 } else {
-                    bitmap = GenerateUtils.createODcode(text);
-                    img.setImageBitmap(bitmap);
-                    changeButton.setText("转为二维码");
+                    if (text.length() <= 80) {
+                        bitmap = GenerateUtils.createODcode(text);
+                        img.setImageBitmap(bitmap);
+                        changeButton.setText("转为二维码");
+                    } else {
+                        Toast.makeText(Generate.this,"二维码包含内容过多，请修改内容至80个字符以内再转为条形码。",Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         }
