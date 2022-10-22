@@ -106,8 +106,8 @@ public class Capture extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Capture.this, MainActivity.class);
-                finish();//intent是Android里用于activity之间信息传递的类
                 startActivity(intent);
+                finish();//intent是Android里用于activity之间信息传递的类
             }
         });
 
