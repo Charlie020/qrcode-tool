@@ -43,6 +43,8 @@ import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.Hashtable;
 import com.google.zxing.integration.android.IntentResult;
+
+
 public class Capture extends CaptureActivity {
 
     private CaptureManager capture;
