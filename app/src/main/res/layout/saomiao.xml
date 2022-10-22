@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,12 +8,7 @@
     <FrameLayout
         android:id="@+id/fl_zxing"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:layout_height="match_parent" >
         <SurfaceView
             android:id="@+id/preview_view"
             android:layout_width="fill_parent"
@@ -24,67 +19,59 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" />
 
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:background="@color/transparent" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@color/zxing_transparent"
+            android:paddingTop="25dp"
             android:visibility="visible">
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@null"
                 android:paddingLeft="8dp"
-                android:stateListAnimator="@null"
                 android:text="返回"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                app:backgroundTint="#00FFFFFF"
                 app:icon="@mipmap/backwhite"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:iconTint="#FFFFFF" />
+                app:iconPadding="0dp" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/mo_scanner_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:paddingLeft="8dp"
-                android:stateListAnimator="@null"
-                android:text=" "
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:layout_centerHorizontal="true"
+                android:background="@null"
+                android:text="图库"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                app:backgroundTint="#00FFFFFF"
                 app:icon="@mipmap/photo"
-                app:iconGravity="textEnd"
-                app:iconPadding="0dp"
-                app:iconTint="#FFFFFF" />
+                app:iconPadding="0dp" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/btn_torch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:paddingLeft="8dp"
-                android:stateListAnimator="@null"
-                android:text="手电筒"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
+                android:background="@null"
+                android:paddingRight="8dp"
+                android:text="开灯"
+                android:textColor="@color/white"
                 android:textSize="18sp"
-                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                app:backgroundTint="#00FFFFFF"
                 app:icon="@mipmap/light"
                 app:iconGravity="textEnd"
-                app:iconPadding="0dp"
-                app:iconTint="#FFFFFF" />
-
+                app:iconPadding="0dp" />
         </RelativeLayout>
 
     </FrameLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
