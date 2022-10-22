@@ -105,9 +105,7 @@ public class Capture extends Activity {
         findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Capture.this, MainActivity.class);
-                startActivity(intent);
-                finish();//intent是Android里用于activity之间信息传递的类
+                finish();
             }
         });
 
