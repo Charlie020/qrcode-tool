@@ -37,8 +37,8 @@ public class InputActivity extends AppCompatActivity {
         Button GenerateODButton = findViewById(R.id.generateOD);
         GenerateODButton.setOnClickListener((new GenerateListener()));
 
-        Button CopyButton = findViewById(R.id.copy);
-        CopyButton.setOnClickListener(new CopyListener());
+        Button PasteButton = findViewById(R.id.paste);
+        PasteButton.setOnClickListener(new PasteListener());
         Button ClearButton = findViewById(R.id.Clear);
         ClearButton.setOnClickListener(new ClearListener());
 
@@ -93,7 +93,7 @@ public class InputActivity extends AppCompatActivity {
         }
     }
 
-    public class CopyListener implements View.OnClickListener {
+    public class PasteListener implements View.OnClickListener {
         public void onClick(View v) {
             //获取系统剪贴板服务
             ClipboardManager clipboardManager = (ClipboardManager)InputActivity.this.getSystemService(Context.CLIPBOARD_SERVICE);
