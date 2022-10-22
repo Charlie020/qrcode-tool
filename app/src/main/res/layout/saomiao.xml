@@ -30,33 +30,59 @@
             android:background="@color/zxing_transparent"
             android:visibility="visible">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
+                android:paddingLeft="8dp"
+                android:stateListAnimator="@null"
                 android:text="返回"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                app:backgroundTint="#00FFFFFF"
+                app:icon="@mipmap/backwhite"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="#FFFFFF" />
 
-            <ImageView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/mo_scanner_photo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="8dp"
-                android:padding="3dp"
-                android:src="@mipmap/photo" />
+                android:paddingLeft="8dp"
+                android:stateListAnimator="@null"
+                android:text=" "
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                app:backgroundTint="#00FFFFFF"
+                app:icon="@mipmap/photo"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                app:iconTint="#FFFFFF" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_torch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:background="@null"
-                android:text="开灯"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:paddingLeft="8dp"
+                android:stateListAnimator="@null"
+                android:text="手电筒"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                app:backgroundTint="#00FFFFFF"
+                app:icon="@mipmap/light"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                app:iconTint="#FFFFFF" />
+
         </RelativeLayout>
 
     </FrameLayout>
