@@ -23,7 +23,7 @@ public class Scan extends AppCompatActivity {
         statusBar.setStatusBarColor(R.color.transparent);
 
         //设置当前界面UI样式
-        setContentView(R.layout.scan);
+//        setContentView(R.layout.scan);
 
         //去除默认标题栏
         ActionBar actionBar = getSupportActionBar();
@@ -59,6 +59,7 @@ public class Scan extends AppCompatActivity {
             intent.setData(content_url);    //使用得到的URL打开系统默认的浏览器
             intentIntegrator.initiateScan();
             startActivity(intent);
+            finish();
         }
         else {
             //不是URL 直接将文本输出

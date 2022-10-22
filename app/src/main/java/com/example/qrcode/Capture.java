@@ -53,7 +53,7 @@ public class Capture extends Activity {
     private CaptureManager capture;
 
 
-//    private String photo_path;//获取相册图片信息
+    private String photo_path;//获取相册图片信息
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,18 +80,13 @@ public class Capture extends Activity {
             }
         });
     }
+
     public class PicListener implements View.OnClickListener {
         public void onClick(View view) {
-            Intent innerIntent = new Intent(); // "android.intent.action.GET_CONTENT"
-            if (Build.VERSION.SDK_INT < 19) {
-                innerIntent.setAction(Intent.ACTION_GET_CONTENT);
-            } else {
-                //  这个方法报 图片地址
-                innerIntent.setAction(Intent.ACTION_PICK);
-            }
-            innerIntent.setType("image/*");
-            Intent wrapperIntent = Intent.createChooser(innerIntent, "选择二维码图片");//选择二维码图片传入
-            startActivityForResult(wrapperIntent, REQUEST_CODE);
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setAction(Intent.ACTION_PICK);    // 执行选中操作
+            intent.setType("image/*");
+            startActivityForResult(intent, REQUEST_CODE);
         }
     }
 
