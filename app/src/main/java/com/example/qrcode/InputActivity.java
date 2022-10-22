@@ -94,6 +94,7 @@ public class InputActivity extends AppCompatActivity {
                         String content = item.getText().toString();
                         EditText multiText = findViewById(R.id.InputText);
                         multiText.setText(content);
+                        multiText.setSelection(multiText.getText().length());
                     }
                 }
             }
