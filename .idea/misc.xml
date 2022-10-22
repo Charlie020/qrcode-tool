@@ -16,6 +16,8 @@
         <entry key="..\:/QRCodeTool/app/src/main/res/layout/generatelayout.xml" value="0.24947916666666667" />
         <entry key="..\:/QRCodeTool/app/src/main/res/layout/help.xml" value="0.24947916666666667" />
         <entry key="..\:/QRCodeTool/app/src/main/res/layout/history_list_item.xml" value="0.24947916666666667" />
+        <entry key="..\:/QRCodeTool/app/src/main/res/layout/saomiao.xml" value="0.2484375" />
+        <entry key="..\:/QRCodeTool/app/src/main/res/layout/scan.xml" value="0.24947916666666667" />
         <entry key="..\:/QRCodeTool/app/src/main/res/layout/search_book_contents.xml" value="0.1" />
         <entry key="..\:/QRCodeTool/app/src/main/res/layout/search_book_contents_header.xml" value="0.24947916666666667" />
         <entry key="..\:/QRCodeTool/app/src/main/res/layout/search_book_contents_list_item.xml" value="0.24947916666666667" />
@@ -35,10 +37,17 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2484375" />
+      </ProjectState>
+    </option>
   </component>
 </project>

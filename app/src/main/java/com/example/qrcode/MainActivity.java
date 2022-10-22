@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 intentIntegrator.setPrompt("请将识别框对准二维码");
                 intentIntegrator.setBeepEnabled(true);
                 intentIntegrator.setOrientationLocked(true);
+                intentIntegrator.setBarcodeImageEnabled(true);
+                intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
                 intentIntegrator.setCaptureActivity(Capture.class);
                 intentIntegrator.initiateScan();
             }
@@ -62,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
             Uri content_url = Uri.parse(uriString);
             intent.setData(content_url);
             startActivity(intent);
-
 
         }
     }

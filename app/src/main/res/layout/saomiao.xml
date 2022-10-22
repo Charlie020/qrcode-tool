@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/fl_zxing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/viewfinder_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:background="@color/transparent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/zxing_transparent"
+            android:visibility="visible" >
+
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/mo_scanner_photo"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:padding="3dp"
+                android:src="@mipmap/photo" />
+            <Button
+                android:id="@+id/btn_torch"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:text="开灯"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
