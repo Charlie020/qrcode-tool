@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         IntentResult intentResult=IntentIntegrator.parseActivityResult(requestCode,resultCode,data);  //获取回传信息
 
-        boolean isURL=new RegexUtill().verifyUrl(intentResult.getContents());
+        boolean isURL=new RegexUtill().verifyUrl(intentResult.getContents()); //判断回传信息是否是URL
 
         if (isURL){
             //浏览器部分  增加网络权限
@@ -70,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.VIEW");
             Uri content_url = Uri.parse(uriString);
-            intent.setData(content_url);
+            intent.setData(content_url);    //使用得到的URL打开系统默认的浏览器
             startActivity(intent);
         }
         else {
             //不是URL 直接将文本输出
             //使用一个文本确认框的形式
-            AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+            AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);  //创建一个消息提示框对象显示文本
             builder.setTitle("文本内容：");
             builder.setMessage(intentResult.getContents());
             builder.setPositiveButton("退出", new DialogInterface.OnClickListener() {

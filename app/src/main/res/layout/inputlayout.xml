@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--文本输入界面样式-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,6 +21,10 @@
         android:textColor="#FFFFFF"
         android:textSize="14sp"
         android:theme="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:shadowColor="#424040"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="5"
         app:backgroundTint="#00FFFFFF"
         app:cornerRadius="7dp"
         app:iconPadding="0dp"
@@ -38,6 +43,10 @@
         android:layout_height="wrap_content"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
+        android:shadowColor="#424040"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="5"
         android:stateListAnimator="@null"
         android:text="清空"
         android:textAllCaps="false"
@@ -110,26 +119,6 @@
         app:strokeColor="@color/white"
         app:strokeWidth="2dp" />
 
-    <EditText
-        android:id="@+id/InputText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/text_style"
-        android:cursorVisible="true"
-        android:ems="14"
-        android:gravity="top"
-        android:hint="在此输入内容...   \n\n\n\n"
-        android:inputType="textMultiLine"
-        android:maxLines="5"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textCursorDrawable="@drawable/guangbiao_style"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/generateOD"
         android:layout_width="wrap_content"
@@ -156,5 +145,31 @@
         app:layout_constraintVertical_bias="0.79"
         app:strokeColor="@color/white"
         app:strokeWidth="2dp" />
+
+<!--ems设置一行字符数量
+    hint设置提示信息，在有内容填充编辑框之后会消失
+    编辑框的样式使用xml语言在drawable文件里，使用android:background="@drawable/text_style"设置
+    maxLines控制最大显示行数，多余的行会隐藏，可以滚动编辑
+    光标样式，使用xml语言在drawable文件里，使用android:textCursorDrawable="@drawable/guangbiao_style"设置
+    -->
+    <EditText
+        android:id="@+id/InputText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_style"
+        android:cursorVisible="true"
+        android:ems="14"
+        android:gravity="top"
+        android:hint="在此输入内容...   \n\n\n\n"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textCursorDrawable="@drawable/guangbiao_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
