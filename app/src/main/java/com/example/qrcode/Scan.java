@@ -29,7 +29,7 @@ public class Scan extends AppCompatActivity {
             actionBar.hide();
         }
 
-        intentIntegrator.setPrompt("请将识别框对准二维码（网址需以http开头）");
+        intentIntegrator.setPrompt("         请将识别框对准二维码\n（以http开头的网址会自动跳转）");
         intentIntegrator.setBeepEnabled(true);
         intentIntegrator.setOrientationLocked(true);
         intentIntegrator.setBarcodeImageEnabled(true);
