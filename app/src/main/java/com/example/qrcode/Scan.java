@@ -1,14 +1,19 @@
 package com.example.qrcode;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Scan extends AppCompatActivity {
     IntentIntegrator intentIntegrator =new IntentIntegrator(Scan.this);
@@ -42,7 +47,7 @@ public class Scan extends AppCompatActivity {
 
         IntentResult intentResult=IntentIntegrator.parseActivityResult(requestCode,resultCode,data);  //获取回传信息
 
-        boolean isURL=new MainActivity.RegexUtill().verifyUrl(intentResult.getContents()); //判断回传信息是否是URL
+        boolean isURL=new RegexUtill().verifyUrl(intentResult.getContents()); //判断回传信息是否是URL
 
         if (isURL){
             //浏览器部分  增加网络权限
@@ -60,7 +65,24 @@ public class Scan extends AppCompatActivity {
             Intent intent = new Intent(Scan.this, Result.class);  //intent是Android里用于activity之间信息传递的类
             intent.putExtra(Text, intentResult.getContents());
             startActivity(intent);
-            finish();
+        }
+
+        finish();
+    }
+
+    public static class RegexUtill {
+        //判断字符串是否是URL的类
+
+        public boolean verifyUrl(String url){
+            // URL验证规则
+            String regEx ="^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)" +
+                    "(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$";
+            // 编译正则表达式
+            Pattern pattern = Pattern.compile(regEx);
+
+            Matcher matcher = pattern.matcher(url);
+            // 字符串是否与正则表达式相匹配
+            return matcher.matches();
         }
     }
 }
