@@ -105,8 +105,10 @@ public class Generate extends AppCompatActivity {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_WRITE: {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // 如果获得了权限
                     Save();
                 } else {
+                    // 如果没有获得权限则
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(Generate.this);
                     alertDialog.setTitle("提示");
                     alertDialog.setMessage("无法访问某些权限可能会影响部分功能的使用，是否要跳转到应用设置页面更改授权？");

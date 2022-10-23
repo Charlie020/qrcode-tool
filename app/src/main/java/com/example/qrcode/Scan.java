@@ -1,12 +1,10 @@
 package com.example.qrcode;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -65,14 +63,12 @@ public class Scan extends AppCompatActivity {
             Intent intent = new Intent(Scan.this, Result.class);  //intent是Android里用于activity之间信息传递的类
             intent.putExtra(Text, intentResult.getContents());
             startActivity(intent);
+            finish();
         }
-
-        finish();
     }
 
     public static class RegexUtill {
         //判断字符串是否是URL的类
-
         public boolean verifyUrl(String url){
             // URL验证规则
             String regEx ="^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)" +
