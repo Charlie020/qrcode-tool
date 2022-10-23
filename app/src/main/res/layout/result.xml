@@ -24,12 +24,12 @@
         app:backgroundTint="#00FFFFFF"
         app:cornerRadius="7dp"
         app:iconPadding="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/ResultText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623"
+        app:layout_constraintVertical_bias="1.15"
         app:strokeColor="@color/white"
         app:strokeWidth="0dp" />
 
@@ -43,7 +43,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
@@ -68,21 +68,22 @@
     -->
     <EditText
         android:id="@+id/ResultText"
-        android:layout_width="283dp"
-        android:layout_height="220dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@drawable/text_style"
         android:cursorVisible="true"
         android:ems="14"
         android:gravity="top"
+        android:hint="\n\n\n\n\n\n\n\n\n\n\n"
         android:inputType="textMultiLine"
-        android:maxLines="10"
+        android:maxLines="15"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textCursorDrawable="@drawable/guangbiao_style"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintTop_toTopOf="@id/textView"
+        app:layout_constraintVertical_bias="0.15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

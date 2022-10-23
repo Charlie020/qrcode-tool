@@ -111,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
         public boolean verifyUrl(String url){
             // URL验证规则
-            String regEx ="^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$";
+            String regEx ="^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)" +
+                    "(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$";
             // 编译正则表达式
             Pattern pattern = Pattern.compile(regEx);
 
