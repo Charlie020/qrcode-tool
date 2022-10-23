@@ -40,11 +40,8 @@ public class Generate extends AppCompatActivity {
     ImageView img;
     ImageView ret;
 
-
     private static final int MY_PERMISSIONS_REQUEST_WRITE = 1;
-//    private static final int MY_PERMISSIONS_REQUEST_READ = 2;
     Button SaveButton;
-
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,8 +83,6 @@ public class Generate extends AppCompatActivity {
         ret = findViewById(R.id.Ret);
         ret.setOnClickListener(new changeXmlListener());
     }
-
-
 
     // 保存到相册
     public class SaveListener implements View.OnClickListener {

@@ -47,18 +47,6 @@
                 app:iconPadding="0dp" />
 
             <Button
-                android:id="@+id/mo_scanner_photo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:background="@null"
-                android:text="图库"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:icon="@mipmap/photo"
-                app:iconPadding="0dp" />
-
-            <Button
                 android:id="@+id/btn_torch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
