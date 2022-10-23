@@ -106,19 +106,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static class RegexUtill {
-        //判断字符串是否是URL的类
 
-        public boolean verifyUrl(String url){
-            // URL验证规则
-            String regEx ="^([hH][tT]{2}[pP]://|[hH][tT]{2}[pP][sS]://)" +
-                    "(([A-Za-z0-9-~]+).)+([A-Za-z0-9-~/])+$";
-            // 编译正则表达式
-            Pattern pattern = Pattern.compile(regEx);
-
-            Matcher matcher = pattern.matcher(url);
-            // 字符串是否与正则表达式相匹配
-            return matcher.matches();
-        }
-    }
 }
