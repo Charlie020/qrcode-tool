@@ -49,7 +49,7 @@ public class InputActivity extends AppCompatActivity {
     // 点击生成按钮时调用的监听器
     public class GenerateListener implements View.OnClickListener {
         public void onClick(View v) {
-            EditText multiText = findViewById(R.id.InputText);   //获取输入内容
+            EditText multiText = findViewById(R.id.ResultText);   //获取输入内容
             String text = multiText.getText().toString();
             if (text.length() == 0) {                            //判断内容是否为空
                 Toast.makeText(InputActivity.this,"输入栏为空，请输入内容",Toast.LENGTH_SHORT).show();
@@ -105,7 +105,7 @@ public class InputActivity extends AppCompatActivity {
                     ClipData.Item item = clipData.getItemAt(0);
                     if (item != null) {
                         String content = item.getText().toString();
-                        EditText multiText = findViewById(R.id.InputText);
+                        EditText multiText = findViewById(R.id.ResultText);
                         int idx = multiText.getSelectionStart();
                         Editable editable = multiText.getText();
                         editable.insert(idx, content);
@@ -118,7 +118,7 @@ public class InputActivity extends AppCompatActivity {
 
     public class ClearListener implements View.OnClickListener {
         public void onClick(View v) {
-            EditText multiText = findViewById(R.id.InputText);   //获取输入内容
+            EditText multiText = findViewById(R.id.ResultText);   //获取输入内容
             multiText.setText("");
         }
     }

@@ -145,7 +145,7 @@
     光标样式，使用xml语言在drawable文件里，使用android:textCursorDrawable="@drawable/guangbiao_style"设置
     -->
     <EditText
-        android:id="@+id/InputText"
+        android:id="@+id/ResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/text_style"

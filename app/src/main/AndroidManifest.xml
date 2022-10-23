@@ -44,6 +44,8 @@
             android:theme="@style/zxing_CaptureTheme"/>
         <activity android:name=".Scan"
             android:screenOrientation="portrait"/>
+        <activity android:name=".Result"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

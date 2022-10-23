@@ -14,16 +14,13 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class Scan extends AppCompatActivity {
     IntentIntegrator intentIntegrator =new IntentIntegrator(Scan.this);
-
+    public static final String Text = "tex";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //将状态栏透明
         StatusBar statusBar = new StatusBar(Scan.this);
         statusBar.setStatusBarColor(R.color.transparent);
-
-        //设置当前界面UI样式
-//        setContentView(R.layout.scan);
 
         //去除默认标题栏
         ActionBar actionBar = getSupportActionBar();
@@ -58,22 +55,14 @@ public class Scan extends AppCompatActivity {
             intent.setData(content_url);    //使用得到的URL打开系统默认的浏览器
             intentIntegrator.initiateScan();
             startActivity(intent);
-
         }
         else {
             //不是URL 直接将文本输出
             //使用一个文本确认框的形式
-            AlertDialog.Builder builder=new AlertDialog.Builder(Scan.this);  //创建一个消息提示框对象显示文本
-            builder.setTitle("文本内容：");
-            builder.setMessage(intentResult.getContents());
-            builder.setPositiveButton("退出", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                    intentIntegrator.initiateScan();
-                }
-            });
-            builder.show();
+            Intent intent = new Intent(Scan.this, Result.class);  //intent是Android里用于activity之间信息传递的类
+            intent.putExtra(Text, intentResult.getContents());
+            startActivity(intent);
         }
+        finish();
     }
 }
