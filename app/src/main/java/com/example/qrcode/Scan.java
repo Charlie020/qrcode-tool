@@ -38,7 +38,6 @@ public class Scan extends AppCompatActivity {
         intentIntegrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         intentIntegrator.setCaptureActivity(Capture.class);
         intentIntegrator.initiateScan();
-
     }
 
     //消息回传  处理扫描界面获得的二维码信息并在当前活动进行处理
@@ -59,7 +58,7 @@ public class Scan extends AppCompatActivity {
             intent.setData(content_url);    //使用得到的URL打开系统默认的浏览器
             intentIntegrator.initiateScan();
             startActivity(intent);
-            finish();
+
         }
         else {
             //不是URL 直接将文本输出
@@ -71,7 +70,6 @@ public class Scan extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
-                    finish();
                     intentIntegrator.initiateScan();
                 }
             });
