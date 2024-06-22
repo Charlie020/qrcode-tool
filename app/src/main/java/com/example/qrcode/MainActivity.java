@@ -16,9 +16,6 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
@@ -102,6 +99,4 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-
 }

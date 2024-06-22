@@ -65,8 +65,12 @@ public class Generate extends AppCompatActivity {
         changeButton = findViewById(R.id.ChangeCode);
         changeButton.setOnClickListener(new ChangeListener());
         if (Type.equals("2")) {
-            Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.njupt);
-            bitmap = GenerateUtils.createQRCode(text,1000,1000,logo);
+            // 二维码中间带logo
+            // Bitmap logo = BitmapFactory.decodeResource(getResources(), R.drawable.njupt);
+            // bitmap = GenerateUtils.createQRCode(text,1000,1000, logo);
+
+            // 二维码中间不带logo
+            bitmap = GenerateUtils.createQRCode(text,1000,1000, null);
             changeButton.setText("转为条形码");
         } else {
             bitmap = GenerateUtils.createODcode(text);
